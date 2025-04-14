@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>图床上传工具</title>
+  <link rel="stylesheet" href="css/popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>图床上传工具</h1>
+    
+    <div class="upload-area" id="dropArea">
+      <p>拖拽图片到此处或粘贴图片</p>
+      <input type="file" id="fileInput" accept="image/*" style="display: none;">
+      <button id="selectFileBtn">选择图片</button>
+    </div>
+    
+    <div class="result-area" id="resultArea">
+      <div class="image-preview">
+        <img id="previewImage" src="../images/icon16.png" alt="预览图">
+      </div>
+      <div class="link-area">
+        <div class="link-item">
+          <label>Markdown格式:</label>
+          <input type="text" id="markdownLink" readonly>
+          <button class="copy-btn" data-target="markdownLink">复制</button>
+        </div>
+        <div class="link-item">
+          <label>HTML格式:</label>
+          <input type="text" id="htmlLink" readonly>
+          <button class="copy-btn" data-target="htmlLink">复制</button>
+        </div>
+        <div class="link-item">
+          <label>URL:</label>
+          <input type="text" id="urlLink" readonly>
+          <button class="copy-btn" data-target="urlLink">复制</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="settings">
+      <label for="authToken">Auth-Token:</label>
+      <input type="text" id="authToken" placeholder="Auth-Token将自动生成和保存" readonly>
+    </div>
+  </div>
+  
+  <script src="js/popup.js" type="module"></script>
+</body>
+</html>

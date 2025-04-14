@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "图床上传工具",
+  "version": "1.0",
+  "description": "一个简单的图床上传工具，支持拖拽、粘贴上传图片，并返回markdown和html格式的链接",
+  "permissions": [
+    "contextMenus",
+    "clipboardRead",
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "commands": {
+    "toggle-floating-window": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+U"
+      },
+      "description": "打开图床上传悬浮窗"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/content.js"],
+      "css": ["css/content.css"]
+    }
+  ]
+}
